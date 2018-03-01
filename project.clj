@@ -14,4 +14,15 @@
             [lein-kibit "0.1.5"]]
   :codox {:output-path "docs/api"}
   :global-vars {*warn-on-reflection* true}
-  :profiles {:uberjar {:aot :all}})
+  :profiles {:uberjar {:aot :all}}
+  :deploy-repositories [["releases" {:url "https://clojars.org/repo"
+                                     :username :env
+                                     :password :env
+                                     :sign-releases false}]]
+  :release-tasks [["vcs" "assert-committed"]
+                  ["change" "version" "leiningen.release/bump-version" "release"]
+                  ["vcs" "commit"]
+                  ["vcs" "tag" "v" "--no-sign"]
+                  ["deploy"]
+                  ["change" "version" "leiningen.release/bump-version"]
+                  ["vcs" "commit"]])

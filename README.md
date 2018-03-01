@@ -122,7 +122,7 @@ and call it with your own logic (we recommend [clojure/core.match](https://githu
 
 ## Acknowledgements
 
-[André Rauh](http://arauh.net/) for the original Plumatic Schema exception unroller.
+[André Rauh](https://gist.github.com/rauhs/cfdb55a8314e0d3f4862) for the original Plumatic Schema exception unroller.
 
 ## License
 

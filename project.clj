@@ -1,4 +1,4 @@
-(defproject siili/humanize "0.1.0"
+(defproject siili/humanize "0.1.1-SNAPSHOT"
   :description "Translate computer produced garble into human readable form"
   :url "https://github.com/siilisolutions/humanize"
   :license {:name "Eclipse Public License"

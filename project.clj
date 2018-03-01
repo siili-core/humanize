@@ -12,4 +12,6 @@
   :plugins [[lein-cljfmt "0.5.7"]
             [lein-codox "0.10.3"]
             [lein-kibit "0.1.5"]]
-  :codox {:output-path "docs/api"})
+  :codox {:output-path "docs/api"}
+  :global-vars {*warn-on-reflection* true}
+  :profiles {:uberjar {:aot :all}})

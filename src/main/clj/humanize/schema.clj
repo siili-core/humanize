@@ -3,7 +3,7 @@
             [clojure.core.match :refer [match]]
             [schema.utils :refer [validation-error-explain]]
             [schema.core :as s])
-  (:import (schema.utils ValidationError)))
+  (:import (schema.utils NamedError ValidationError)))
 
 ;; Originally based on and then heavily refactored from
 ;; https://gist.github.com/rauhs/cfdb55a8314e0d3f4862
@@ -102,7 +102,7 @@
    the key :ok is instead returned in its place."
   [ne additional-translations]
   (if-not (nil? ne)
-    (explain (.error ne) additional-translations)
+    (explain (.error ^NamedError ne) additional-translations)
     :ok))
 
 (defn- extract-param-errors

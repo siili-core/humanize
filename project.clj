@@ -11,6 +11,7 @@
   :repl-options {:init-ns humanize.user}
   :plugins [[lein-cljfmt "0.5.7"]
             [lein-codox "0.10.3"]
+            [lein-eftest "0.4.3"]
             [lein-kibit "0.1.5"]]
   :codox {:output-path "docs/api"}
   :global-vars {*warn-on-reflection* true}

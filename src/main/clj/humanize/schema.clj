@@ -117,7 +117,7 @@
   [err additional-translations]
   (cond
     (vector? (:error err))                   {:in  (extract-param-errors err additional-translations)}
-    (instance? ValidationError (:error err)) {:out err}
+    (instance? ValidationError (:error err)) {:out (explain err additional-translations)}
     :else {:unknown err}))
 
 (defn ex->err

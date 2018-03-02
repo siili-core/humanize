@@ -32,13 +32,12 @@
 (deftest errors-test
   (testing "single param error can be humanized"
     (let [err (-> (inspect (partial one :s)) hs/ex->err)]
+      (println err)
       (is (= "':s' is not an integer."
              (hs/humanize (-> err :in first second))))))
 
-  (comment
-    "TODO: This got broken somewhere along the way, we shall fix 'em soon"
-    (testing "return type error can be humanized"
-    (let [err (-> (inspect (partial incompat-ret 1)) hs/ex->err)]
-      (println err)
-      (is (= "'1' is not a string but it should be."
-             (hs/humanize (-> err :out :error))))))))
+  (testing "return type error can be humanized"
+  (let [err (-> (inspect (partial incompat-ret 1)) hs/ex->err)]
+    (println err)
+    (is (= "'1' is not a string but it should be."
+           (hs/humanize (-> err :out :error)))))))

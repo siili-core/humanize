@@ -52,6 +52,7 @@ Base usage is very simple:
 
 (check #(broken "two"))
 
+=> {:in ([x "'two' is not an integer."])}
 ```
 
 ## Extending

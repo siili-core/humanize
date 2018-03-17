@@ -2,11 +2,11 @@
 
 Library for translating errors into human readable form.
 
-[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0) [![CircleCI](https://circleci.com/gh/siilisolutions/humanize.svg?style=svg)](https://circleci.com/gh/siilisolutions/humanize)
+[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0) [![CircleCI](https://img.shields.io/circleci/project/github/siilisolutions/humanize.svg)](https://circleci.com/gh/siilisolutions/humanize)
 
 ## Installation
 
-Add `humanize` to your project:
+Add `siili/humanize` to your project:
 [![Clojars Project](https://img.shields.io/clojars/v/siili/humanize.svg)](https://clojars.org/siili/humanize)
 
 > Not sure if humanize is for you? We recommend testing it with [`lein try`](https://github.com/rkneufeld/lein-try)!

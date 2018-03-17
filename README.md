@@ -48,11 +48,10 @@ Base usage is very simple:
     (catch clojure.lang.ExceptionInfo e
       (if (= (-> e ex-data :type)
              :schema.core/error)
-        (h/ex->err e))))
+        (h/ex->err e)))))
 
 (check #(broken "two"))
 
-=> {:in ([x "'two' is not an integer."])}
 ```
 
 ## Extending

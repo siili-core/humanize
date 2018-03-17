@@ -2,11 +2,11 @@
 
 Library for translating errors into human readable form.
 
-[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0) [![CircleCI](https://circleci.com/gh/siilisolutions/humanize.svg?style=svg)](https://circleci.com/gh/siilisolutions/humanize)
+[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0) [![CircleCI](https://img.shields.io/circleci/project/github/siilisolutions/humanize.svg)](https://circleci.com/gh/siilisolutions/humanize)
 
 ## Installation
 
-Add `humanize` to your project:
+Add `siili/humanize` to your project:
 [![Clojars Project](https://img.shields.io/clojars/v/siili/humanize.svg)](https://clojars.org/siili/humanize)
 
 > Not sure if humanize is for you? We recommend testing it with [`lein try`](https://github.com/rkneufeld/lein-try)!
@@ -48,11 +48,10 @@ Base usage is very simple:
     (catch clojure.lang.ExceptionInfo e
       (if (= (-> e ex-data :type)
              :schema.core/error)
-        (h/ex->err e))))
+        (h/ex->err e)))))
 
 (check #(broken "two"))
 
-=> {:in ([x "'two' is not an integer."])}
 ```
 
 ## Extending
@@ -123,6 +122,12 @@ and call it with your own logic (we recommend [clojure/core.match](https://githu
 ## Acknowledgements
 
 [André Rauh](https://gist.github.com/rauhs/cfdb55a8314e0d3f4862) for the original Plumatic Schema exception unroller.
+
+## Related Work
+
+ - For [`spec.alpha`](https://github.com/clojure/spec.alpha) see [bhb/expound](https://github.com/bhb/expound)
+ - For older versions of Schema and additionally Avro, datomic, etc. see [cddr/integrity](https://github.com/cddr/integrity)<br />
+ It is possible some of the features of this library will find their way to humanize eventually
 
 ## License
 

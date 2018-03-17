@@ -123,6 +123,12 @@ and call it with your own logic (we recommend [clojure/core.match](https://githu
 
 [André Rauh](https://gist.github.com/rauhs/cfdb55a8314e0d3f4862) for the original Plumatic Schema exception unroller.
 
+## Related Work
+
+ - For [`spec.alpha`](https://github.com/clojure/spec.alpha) see [bhb/expound](https://github.com/bhb/expound)
+ - For older versions of Schema and additionally Avro, datomic, etc. see [cddr/integrity](https://github.com/cddr/integrity)<br />
+ It is possible some of the features of this library will find their way to humanize eventually
+
 ## License
 
 Copyright © 2018 Siili Solutions

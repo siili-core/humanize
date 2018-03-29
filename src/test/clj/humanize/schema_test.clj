@@ -41,3 +41,7 @@
     (println err)
     (is (= "'1' is not a string but it should be."
            (hs/humanize (-> err :out :error)))))))
+
+(deftest check-compatibility
+  (testing "explain works as is with s/check"
+    (is (= "'three' is not an integer." (hs/explain (s/check s/Int "three"))))))

@@ -65,37 +65,38 @@
        :else
        (additional-translations x)))))
 
-(defn- explain
-  [x additional-translations]
-  (cond
-    (map? x)
-    (into
-     (sorted-map)
-     (map
-      (fn [[k v]]
-        [(explain k additional-translations)    ;; the key itself might be a validation error
-         (explain v additional-translations)])  ;; value might actually indicate issues with the key
-      x))
+(defn explain
+  ([x] (explain x identity))
+  ([x additional-translations]
+   (cond
+     (map? x)
+     (into
+      (sorted-map)
+      (map
+       (fn [[k v]]
+         [(explain k additional-translations)    ;; the key itself might be a validation error
+          (explain v additional-translations)])  ;; value might actually indicate issues with the key
+       x))
 
-    (or (seq? x)
-        (coll? x))
-    (mapv #(explain % additional-translations) x)
+     (or (seq? x)
+         (coll? x))
+     (mapv #(explain % additional-translations) x)
 
-    (instance? ValidationError x)
-    (humanize (vectorize (validation-error-explain x)) additional-translations)
+     (instance? ValidationError x)
+     (humanize (vectorize (validation-error-explain x)) additional-translations)
 
-    ;; these are Schema's built-in symbols which are kind of hard to match
-    ;; in uniform fashion so it's easier to just do the replacement here
-    (symbol? x)
-    (cond
-      (= 'missing-required-key x)
-      "Missing required key"
+     ;; these are Schema's built-in symbols which are kind of hard to match
+     ;; in uniform fashion so it's easier to just do the replacement here
+     (symbol? x)
+     (cond
+       (= 'missing-required-key x)
+       "Missing required key"
 
-      (= 'invalid-key)
-      "Invalid key.")
+       (= 'invalid-key)
+       "Invalid key.")
 
-    :else
-    x))
+     :else
+     x)))
 
 (defn- explain-single
   "Explains single NamedError. In case the value is nil (indicates no error)

@@ -2,7 +2,7 @@
 
 Library for translating errors into human readable form.
 
-[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0) [![CircleCI](https://img.shields.io/circleci/project/github/siilisolutions/humanize.svg)](https://circleci.com/gh/siilisolutions/humanize) [![cljdoc badge](https://cljdoc.xyz/badge/siilisolutions/humanize)](https://cljdoc.xyz/d/siilisolutions/humanize/CURRENT)
+[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0) [![CircleCI](https://img.shields.io/circleci/project/github/siilisolutions/humanize.svg)](https://circleci.com/gh/siilisolutions/humanize) [![cljdoc badge](https://cljdoc.xyz/badge/siili/humanize)](https://cljdoc.xyz/d/siili/humanize/CURRENT)
 
 ## Installation
 
